@@ -184,6 +184,8 @@ class _ChatState extends State<Chat> {
         home: Scaffold(
           appBar: AppBar(
             leading: IconButton(
+              highlightColor: Colors.transparent,
+              splashColor:Colors.transparent ,
               icon: Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
                 widget.refresh();
@@ -192,6 +194,18 @@ class _ChatState extends State<Chat> {
                 },
             ),
             title: Text(widget.conselor, style: TextStyle(color: Colors.white),),
+            actions: [
+              IconButton(
+                highlightColor: Colors.transparent,
+                splashColor:Colors.transparent ,
+                icon: Icon(Icons.call, color: Colors.white),
+                onPressed: () {
+                  widget.refresh();
+                  Navigator.pop(context,true);
+
+                },
+              ),
+            ],
           ),
           body: Container(
             height: double.infinity,
@@ -305,7 +319,8 @@ class _ChatState extends State<Chat> {
                         child: Material(
                           color: Colors.white, // button color
                           child: InkWell(
-                            splashColor: Colors.grey, // inkwell color
+                            highlightColor: Colors.transparent,
+                            splashColor:Colors.transparent , // inkwell color
                             child: SizedBox(width: 50, height: 50, child: Icon(Icons.send_rounded,color: Colors.blue,)),
                             onTap: () {
                               var msg = message.text;

@@ -1,6 +1,5 @@
 import 'file:///D:/project%20flutter/crud_firebase/lib/ScreenAdmin/dashboardadmin.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:crud_firebase/mainagora.dart';
 import 'package:crud_firebase/newApp.dart';
 import 'package:crud_firebase/notif.dart';
 import 'package:crud_firebase/user/chat.dart';
@@ -218,8 +217,7 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               onPressed: () {
                                 Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => MainAgora()
-                                        //ChatConseling2(refresh: _getusername,)
+                                    builder: (context) => ChatConseling2(refresh: _getusername,)
                                 ));
                               },
                               shape: new RoundedRectangleBorder(
