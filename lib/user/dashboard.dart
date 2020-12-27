@@ -1,5 +1,6 @@
 import 'file:///D:/project%20flutter/crud_firebase/lib/ScreenAdmin/dashboardadmin.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crud_firebase/mainagora.dart';
 import 'package:crud_firebase/newApp.dart';
 import 'package:crud_firebase/notif.dart';
 import 'package:crud_firebase/user/chat.dart';
@@ -163,62 +164,71 @@ class _DashboardState extends State<Dashboard> {
                       Text("If you have problems regarding your personal. Tell us immediately to be able to help you.",textAlign: TextAlign.left ,style: TextStyle(color: Colors.white,fontSize: 15),),
                       SizedBox(height: 30.0,),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          RaisedButton(
-                            textColor: Colors.blue,
-                            color: Colors.white,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 10.0),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.send,
-                                    color: Colors.blue,
-                                    size: 20.0,
-                                  ),
-                                  SizedBox(width: 5.0,),
-                                  Text("Send Mailbox",style: TextStyle(fontSize: 15.0),)
-                                ],
+                          Expanded(
+                            child: RaisedButton(
+                              textColor: Colors.blue,
+                              color: Colors.white,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.send,
+                                      color: Colors.blue,
+                                      size: 20.0,
+                                    ),
+                                    SizedBox(width: 5.0,),
+                                    Text("Send Mailbox",style: TextStyle(fontSize: 15.0),)
+                                  ],
+                                ),
                               ),
-                            ),
-                            onPressed: () {
+                              onPressed: () {
 //                              _openPopup(context);
-                              Navigator.push(context, new MaterialPageRoute(
-                                  builder: (context) => KotakSuara()
-                              ));
-                            },
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0),
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => KotakSuara()
+                                ));
+                              },
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(30.0),
+                              ),
                             ),
                           ),
-                          Expanded(child: Container()),
-                          RaisedButton(
-                            textColor: Colors.blue,
-                            color: Colors.white,
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 10.0),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.chat,
-                                    color: Colors.blue,
-                                    size: 20.0,
-                                  ),
-                                  SizedBox(width: 5.0,),
-                                  Text("Counseling Now",style: TextStyle(fontSize: 15.0),)
-                                ],
+                          SizedBox(width: 10.0,),
+                          Expanded(
+                            child: RaisedButton(
+                              textColor: Colors.blue,
+                              color: Colors.white,
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.chat,
+                                      color: Colors.blue,
+                                      size: 20.0,
+                                    ),
+                                    SizedBox(width: 5.0,),
+                                    Text("Counseling Now",style: TextStyle(fontSize: 15.0),)
+                                  ],
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => MainAgora()
+                                        //ChatConseling2(refresh: _getusername,)
+                                ));
+                              },
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(30.0),
                               ),
                             ),
-                            onPressed: () {
-                              Navigator.push(context, new MaterialPageRoute(
-                                  builder: (context) => ChatConseling2(refresh: _getusername,)
-                              ));
-                            },
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0),
-                            ),
-                          )
+                          ),
+
+
                         ],
                       )
 
