@@ -1,5 +1,10 @@
 # crud_firebase
 
+Akun admin : 
+user: mamik09
+pass: mamik09
+
+
 A new Flutter application.
 
 ## Getting Started
